@@ -87,7 +87,8 @@ const en: AppTranslations = {
             title: 'Notifications',
             notificationTypes: {
                 commentOnOwnedPost: '{{username}} commented on your post',
-                voteOnOwnedPost: '{{voteCount}} people voted on your post'
+                voteOnOwnedPost: '{{voteCount}} people voted on your post',
+                commentOnThirdPartyPost: "{{sender.username} commented on {postOwner.username}'s post"
             }
         },
         post: {
