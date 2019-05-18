@@ -71,6 +71,10 @@ export default class NotificationsScreen extends React.Component<NotificationsPr
               id
               rate
               voteCount
+              owner {
+                username
+                photoURL
+              }
             }
           }
         }
@@ -122,7 +126,7 @@ export default class NotificationsScreen extends React.Component<NotificationsPr
                           onPress={() => this.openPost(notification.post.id)}>
           <View style={styles.notification.left}>
             <Image style={styles.notification.avatar as any} source={notification.comment && notification.comment.owner && notification.comment.owner.photoURL? { uri: notification.comment.owner.photoURL }: photoDefault} width={40} height={40}/>
-            <Text>{ i18n.t('screens.notifications.notificationTypes.commentOnThirdPartyPost', { username: notification.comment.owner.username }) }</Text>
+            <Text>{ i18n.t('screens.notifications.notificationTypes.commentOnThirdPartyPost', {username: notification.post.owner.username}, { username: notification.comment.owner.username }) }</Text>
           </View>
           <View style={styles.notification.right}>
             <Text>{ moment(notification.updatedAt).fromNow(true) }</Text>
